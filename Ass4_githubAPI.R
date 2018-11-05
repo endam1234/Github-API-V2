@@ -37,4 +37,13 @@ gitDF[gitDF$full_name == "jtleek/datasharing", "created_at"]
 
 #link: https://towardsdatascience.com/accessing-data-from-github-api-using-r-3633fb62cb08
 
+followingInfo = GET("https://api.github.com/users/endam1234/following", gtoken )
+followingContent = content(followingInfo)
+followingDataFrame = jsonlite::fromJSON(jsonlite::toJSON(followingContent))
+
+followingID = followingDataFrame$login #list of people I am following
+followingID
+followingURL = followingDataFrame$url #links to the profiles of the people I am following
+followingURL
+
 
