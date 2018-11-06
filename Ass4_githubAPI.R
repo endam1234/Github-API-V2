@@ -46,4 +46,14 @@ followingID
 followingURL = followingDataFrame$url #links to the profiles of the people I am following
 followingURL
 
+followersInfo = GET("https://api.github.com/users/endam1234/followers", gtoken )
+followersContent = content(followersInfo)
+followersDataFrame = jsonlite::fromJSON(jsonlite::toJSON(followersContent))
+
+followersID = followersDataFrame$login #list of people following me
+followersID
+amountFollowers = length(followersID) #number of followers I have
+amountFollowers
+
+
 
