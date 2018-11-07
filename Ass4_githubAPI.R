@@ -55,5 +55,13 @@ followersID
 amountFollowers = length(followersID) #number of followers I have
 amountFollowers
 
+reposInfo = GET("https://api.github.com/users/endam1234/repos", gtoken )
+reposContent = content(reposInfo)
+reposDataFrame = jsonlite::fromJSON(jsonlite::toJSON(reposContent))
+
+reposName =reposDataFrame$name #name of my repositories
+reposName
+reposCreated = reposDataFrame$created_at #when these repositories were created
+reposCreated
 
 
