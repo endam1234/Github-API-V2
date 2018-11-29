@@ -108,3 +108,43 @@ for(x in 1:length(usersIDs))
 }
 
 
+#PLOTLY LINK: https://plot.ly/mckennen
+
+Sys.setenv("plotly_username"="mckennen")
+Sys.setenv("plotly_api_key"="faihUwaWoXdwS5uNu0zx")
+
+
+p1 = plot_ly(data = usersDataFrame, x = ~Following, y = ~Followers,
+             marker = list(size = 10,
+                           color = 'rgba(255, 182, 193, .9)',
+                           line = list(color = 'rgba(152, 0, 0, .8)',
+                                       width = 2))) %>%
+  layout(title = 'Styled Scatter',
+         yaxis = list(zeroline = FALSE),
+         xaxis = list(zeroline = FALSE))
+
+p1 #Upload to Plotly
+
+Sys.setenv("plotly_username"="mckennen")
+Sys.setenv("plotly_api_key"="faihUwaWoXdwS5uNu0zx")
+api_create(p1, filename = "Followers vs Following")
+
+
+
+p2 = plot_ly(data = usersDataFrame, x = ~Following, y = ~Repositories,
+             marker = list(size = 10,
+                           color = 'rgba(255, 182, 193, .9)',
+                           line = list(color = 'rgba(152, 0, 0, .8)',
+                                       width = 2))) %>%
+  layout(title = 'Styled Scatter',
+         yaxis = list(zeroline = FALSE),
+         xaxis = list(zeroline = FALSE))
+
+p2
+
+
+Sys.setenv("plotly_username"="mckennen")
+Sys.setenv("plotly_api_key"="faihUwaWoXdwS5uNu0zx")
+api_create(p2, filename = "Following vs Repositories")
+
+
