@@ -147,4 +147,19 @@ Sys.setenv("plotly_username"="mckennen")
 Sys.setenv("plotly_api_key"="faihUwaWoXdwS5uNu0zx")
 api_create(p2, filename = "Following vs Repositories")
 
+p3 = plot_ly(data = usersDataFrame, x = ~Repositories, y = ~Followers,
+             marker = list(size = 10,
+                           color = 'rgba(255, 182, 193, .9)',
+                           line = list(color = 'rgba(152, 0, 0, .8)',
+                                       width = 2))) %>%
+  layout(title = 'Styled Scatter',
+         yaxis = list(zeroline = FALSE),
+         xaxis = list(zeroline = FALSE))
+
+p3
+
+Sys.setenv("plotly_username"="mckennen")
+Sys.setenv("plotly_api_key"="faihUwaWoXdwS5uNu0zx")
+api_create(p3, filename = "Repositories vs Followers")
+
 
